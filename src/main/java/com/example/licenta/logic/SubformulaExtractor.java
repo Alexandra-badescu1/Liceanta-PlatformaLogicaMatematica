@@ -23,7 +23,6 @@ public class SubformulaExtractor {
                 }
             }
         }
-
         // Add atomic formulas (single variables)
         for (int i = 0; i < formula.length(); i++) {
             char ch = formula.charAt(i);

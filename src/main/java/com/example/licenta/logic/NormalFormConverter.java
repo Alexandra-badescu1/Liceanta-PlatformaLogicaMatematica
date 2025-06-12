@@ -1,5 +1,6 @@
 package com.example.licenta.logic;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -11,13 +12,13 @@ import java.util.*;
  * and simplifying the formulas.
  */
 
+@Component
 public class NormalFormConverter {
-    private final FormulaValidator validator;
+    @Autowired
+    private FormulaValidator validator;
     private final LogicalDistributivity logic = new LogicalDistributivity();
 
-    public NormalFormConverter() {
-        this.validator = new FormulaValidator();
-    }
+
 
     public String toNormalForm(String formula, boolean targetCNF) {
         if (!validator.isFormula(formula)) {

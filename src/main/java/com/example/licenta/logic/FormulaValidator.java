@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
+@Component
 public class FormulaValidator {
     private String input;
     private int index;
