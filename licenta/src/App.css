@@ -1,0 +1,156 @@
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fafafa; /* un alb foarte blând */
+  color: #2c3e50; /* gri-albastru academic */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+body.dark {
+  background-color: #121212; /* dark modern background */
+  color: #eee;
+}
+
+.container {
+  max-width: 960px;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fef9f4; /* crem foarte soft */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.dark .container {
+  background-color: #1f1f1f; /* dark grey */
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a5276; /* deep blue academic */
+}
+
+body.dark h1, body.dark h2 {
+  color: #f4d03f; /* galben pal pentru titluri */
+}
+
+input, button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.symbol-button {
+  width: auto; /* 🟢 Important: width cât textul */
+  min-width: 50px; /* 🟢 ca să nu fie prea mici pe mobil */
+}
+
+input {
+  border: 2px solid #5dade2; /* blue border */
+  padding-left: 10px;
+}
+li{
+  color: #ca18f2;
+}
+
+body.dark input {
+  background-color: #2c2c2c;
+  color: #eee;
+  border: 2px solid #5dade2;
+}
+
+button {
+  background-color: #1abc9c; /* emerald */
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #148f77;
+}
+
+body.dark button {
+  background-color: #9b59b6; /* violet in dark mode */
+  color: #fff;
+}
+
+button:hover {
+  background-color: #76448a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: #f8f8f8; /* puțin mai gri, nu alb orbitor */
+  color: #2c3e50; /* text mai clar */
+}
+
+th, td {
+  border: 1px solid #aaa; /* gri mediu pentru borderuri */
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f0f0f0; /* rânduri alternate mai deschise */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* alb curat pentru contrast */
+}
+
+body.dark table {
+  background-color: #1c1c1c;
+  color: #eee;
+}
+
+body.dark th, body.dark td {
+  border: 1px solid #555; /* borders mai clare în dark */
+}
+
+body.dark thead {
+  background-color: #2980b9; /* albastru mai luminos în dark mode */
+}
+
+body.dark tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+body.dark tbody tr:nth-child(odd) {
+  background-color: #1c1c1c;
+}
+
+thead {
+  background-color: #5dade2; /* blue header */
+  color: white;
+}
+
+body.dark table {
+  background-color: #2c2c2c;
+}
+
+body.dark thead {
+  background-color: #3498db; /* lighter blue in dark */
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease-in-out;
+}
