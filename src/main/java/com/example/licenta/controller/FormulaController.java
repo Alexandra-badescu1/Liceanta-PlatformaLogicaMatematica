@@ -116,18 +116,21 @@ public class FormulaController {
             Set<String> variables = FormulaEvaluator.extractVariables(formula);
             List<Map<String, String>> table = tableGenerator.generateTruthTable(variables, formula);
 
+            List<String> headers = getTableHeaders(variables, formula);
+            String formulaKey = headers.get(headers.size() - 1); // ultima coloană e formula completă
+
             boolean allTrue = true;
             boolean allFalse = true;
 
             for (Map<String, String> row : table) {
-                String result = row.get(formula);
-                if (result.equals("0")) allTrue = false;
-                if (result.equals("1")) allFalse = false;
+                String value = row.get(formulaKey);
+                if ("0".equals(value)) allTrue = false;
+                if ("1".equals(value)) allFalse = false;
             }
 
             String classification = allTrue ? "Tautologie" :
                     allFalse ? "Contradicție" :
-                            "Nici tautologie, nici contradicție";
+                            "Formulă realizabilă";
 
             return ResponseEntity.ok(Map.of(
                     "formula", formula,
@@ -138,6 +141,7 @@ public class FormulaController {
                     .body(Map.of("error", "Classification failed: " + e.getMessage()));
         }
     }
+
     @PostMapping("/subformulas")
     public ResponseEntity<Map<String, Object>> getSubformulas(@RequestBody Map<String, String> body) {
         try {
